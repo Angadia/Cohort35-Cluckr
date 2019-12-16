@@ -1,2 +1,38 @@
 <%- include("partials/header") %>
+  <main class="main">
+  <%
+  if (clucks) {
+    if (clucks.length > 0) {
+  %>
+    <clucks class="clucks">
+  <%
+    }    
+    clucks.forEach(cluck => {
+  %>
+    <article class="cluck">
+      <cluck class="cluck_details">
+        <div class="cluck_image">
+          <img src="/images/cluck_image.jpg" alt="Cluck image" class="image">
+        </div>
+        <div class="cluck_content">
+          <h4 class="cluck_user_title">
+            <%= cluck.username %> <%= String.fromCharCode(0x2022) %>
+          </h4>
+          <p class="cluck_user_content">
+            <%= cluck.content %>
+          </p>
+          <img src="<%= cluck.image_url %>" alt="<%= cluck.image_url %>" class="cluck_image_url">
+        </div>
+      </cluck>
+    </article>
+  <%
+    });
+    if (clucks.length > 0) {
+  %>
+    </clucks>
+  <%
+    };
+  };
+  %>
+  </main>
 <%- include("partials/footer") %>

@@ -1,4 +1,6 @@
 var express = require('express');
+const knex = require("../db/client");
+
 var router = express.Router();
 
 
@@ -32,9 +34,18 @@ router.get('/sign_out', (req, res) => {
   res.redirect('/');
 });
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index');
+router.get('/clucks', (req, res) => {
+  res.redirect('/');
+});
+
+router.get('/', (req, res) => {
+  knex('clucks')
+    .select('*')
+    .orderBy('created_at', 'DESC')
+  .then( clucks => {
+    res.locals.clucks = clucks;
+    res.render("index");
+  });
 });
 
 module.exports = router;
