@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+  <title>Cluckr</title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="branding">
+      <a href="/"><img src="/images/cluckr_logo.jpg" alt="Cluckr Logo" class="logo"></a>
+    </div>
+    <nav class="nav">
+      <ul class="menu">
+        <li><a href="/clucks/new"><button type="button">Cluck!</button></a></li>
+        <% if (signedInUser != "") { %>
+          <li><label class="lbl_header_username"><%= signedInUser %></label></li>
+          <li><a href="/sign_out"><button type="button">Sign Out</button></a></li>
+        <% } else { %>
+          <li><a href="/sign_in"><button type="button">Sign In</button></a></li>
+        <% } %>
+      </ul>
+    </nav>
+  </header>
