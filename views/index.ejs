@@ -1,5 +1,21 @@
 <%- include("partials/header") %>
   <main class="main">
+    <aside class="trends">
+      <div class="trending_clucks">
+        <h2>Trending Clucks</h2>
+        <ul class="trending_hash_tags">
+          <% if (trends) {
+            if (trends.length > 0) {
+              trends.forEach(trending_hash_tag_count => {
+          %>
+          <li>#<%= trending_hash_tag_count.hash_tag %> - <%= trending_hash_tag_count.count %></li>
+          <%  });
+            };
+          };
+          %>
+        </ul>
+      </div>
+    </aside>
   <%
   if (clucks) {
     if (clucks.length > 0) {

@@ -52,7 +52,13 @@ router.get('/', (req, res) => {
       cluck['time_ago'] = timeAgo.format(cluck.created_at);
     });
     res.locals.clucks = clucks;
-    res.render("index");
+    knex('hash_tags')
+      .select('hash_tag', 'count')
+      .orderBy('count', 'DESC')
+    .then(hashTagsCounts => {
+      res.locals.trends = hashTagsCounts;
+      res.render('index');
+    });
   });
 });
 
