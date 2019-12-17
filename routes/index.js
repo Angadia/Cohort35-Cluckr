@@ -1,7 +1,7 @@
 const express = require('express');
-const knex = require("../db/client");
-const TimeAgo = require("javascript-time-ago");
-const en = require("javascript-time-ago/locale/en");
+const knex = require('../db/client');
+const TimeAgo = require('javascript-time-ago');
+const en = require('javascript-time-ago/locale/en');
 
 TimeAgo.addLocale(en);
 

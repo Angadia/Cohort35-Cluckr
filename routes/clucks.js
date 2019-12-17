@@ -89,7 +89,6 @@ router.post('/', (req, res) => {
       .returning('*')
     .then(cluck => {
       // regex for hashtags
-      // const re = /\B(\#[a-zA-Z]+\b)/;
       const re = /(^|)(#[a-z\d-]+)/ig;
       const hashTags = [];
       cluck[0].content.split(re).forEach( element => {

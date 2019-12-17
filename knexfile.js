@@ -6,11 +6,11 @@ module.exports = {
     client: 'pg',
     connection: {
       database: 'Cluckr',
-      username:"jigs",
-      password:"supersecret"
+      username: 'jigs',
+      password: 'supersecret'
     },
     migrations: {
-      directory: "./db/migrations"
+      directory: './db/migrations'
     }
   }
 
