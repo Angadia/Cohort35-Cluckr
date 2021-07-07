@@ -1,0 +1,178 @@
+@import url("reset.css");
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+
+/*** header and navigation menu ***/
+
+.header {
+  border-bottom: 1px solid black;
+  display: flex;
+  flex-direction: row;
+}
+
+.nav {
+  width: 100%;
+  padding: 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.menu button,
+.menu label {
+  font-size: 1.5em;
+  font-weight: 400;
+  margin-left: 0.5em;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+
+/*** Clucks all around ***/
+
+.main {
+  padding: 0.5em;
+  display: flex;
+  flex-direction: row;  
+}
+
+.trends {
+  width:30%;
+  padding: 0.5em;
+}
+
+.trending_clucks {
+  padding: 1em;
+  border: 1px solid black;
+}
+
+.trending_hash_tags {
+  padding-top: 0.5em;
+  display: flex;
+  flex-direction: column;
+}
+
+.clucks {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+}
+
+.cluck {
+  padding: 0.5em;
+}
+
+.cluck_details {
+  padding: 1em;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.cluck_image_url {
+  max-width: 100%;
+  max-height: auto;
+}
+
+
+/*** Sign in form ***/
+
+.sign_in {
+  width: 100%;
+  padding: 0.5em;
+}
+
+.sign_in_form {
+  padding: 1em;
+  border: 1px solid black;
+}
+
+.sign_in_form_input_text {
+  width: 100%;
+}
+
+.sign_in_form_submit {
+  padding-top: 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  
+}
+
+.sign_in_form_submit_btn {
+  width: 50%;
+}
+
+
+/*** Cluck at a time ***/
+
+.cluck_new {
+  width: 100%;
+  padding: 0.5em;
+}
+
+.cluck_new_form {
+  padding: 1em;
+  border: 1px solid black;
+}
+
+.cluck_form_content_text {
+  width: 100%;
+}
+
+.cluck_form_image_url_text {
+  width: 100%;
+}
+
+.cluck_form_submit {
+  padding-top: 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.cluck_form_cluck_btn {
+  width: 50%;
+}
+
+
+/*** Hide the Trends listings in aside
+if viewing on a mobile device with 
+width no bigger than 450 pixels. ***/
+
+@media (max-width: 450px) {
+
+  .menu button,
+  .menu label {
+    font-size: 1.1em;
+    font-weight: 500;
+    margin-left: 0.3em;
+  }
+  
+  aside {
+    display: none;
+  }
+
+  .clucks {
+    width: 100%;
+  }
+
+ }

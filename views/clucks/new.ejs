@@ -1,0 +1,19 @@
+<%- include("../partials/header") %> 
+  <main class="main">
+    <article class="cluck_new">
+      <div class="cluck_new_form">
+        <form action="/clucks" method="POST">
+          <label for="title">Content</label>
+          <textarea name="content" placeholder="Whatchoo cluckin' 'bout?" 
+            class="cluck_form_content_text"></textarea>
+          <label for="image_url">Image Url</label>
+          <input type="text" name="image_url" placeholder="https://i.imgur.com/qM6KaEy.gifv"
+            class="cluck_form_image_url_text">
+          <div class="cluck_form_submit">
+            <input type="submit" value="Cluck!" class="cluck_form_cluck_btn">
+          </div>
+        </form>
+      </div>
+    </article>
+  </main>
+<%- include("../partials/footer") %>
